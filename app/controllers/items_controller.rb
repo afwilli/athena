@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   # GET /items.json
   def welcome
     @items = Item.all
+    @categories =Category.all
   end
 
   # GET /items/1
@@ -75,6 +76,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :description, :price, :stock)
+      params.require(:item).permit(:name, :description, :price, :stock, :category_id)
     end
 end

@@ -1,13 +1,30 @@
-<h1> WELCOME USER! </h1>
-<BR>
-
+<h1> WELCOME </h1>
 <%if !user_signed_in? %>
-<%= link_to('Register', new_user_session_path)  %>
-<% end %>
-<p id="notice"><%= notice %></p>
+<%= link_to('Register', new_user_session_path)  %><% end %>
 <BR>
-
 <h1>Check out our avalible items:</h1>
+<p id="notice"><%= notice %></p>
+
+<div class = "row">
+    <div class = "col-md-3"> Categories
+          <table>
+          <thead>
+            <tr>
+             <th><th/>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @categories.each do |category| %>
+              <tr>
+                <td><%= category.name %></td>
+              </tr>
+            <% end %>
+
+          </tbody>
+        </table>
+        </div>
+ <div class = "col-md-9">
 
 <table>
   <thead>
@@ -26,5 +43,6 @@
 
   </tbody>
 </table>
+</div></div>
 <BR>
    

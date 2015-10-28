@@ -1,14 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Items</h1>
-
-<table>
+<h1>Check out our avalible items</h1>
+  <table>
+    <div class="panel panel-default">
+      <div class="panel-heading">Listing Items</div>
+      <table class="table">
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
       <th>Price</th>
       <th>Stock</th>
+      <th> Category </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,13 +23,21 @@
         <td><%= item.description %></td>
         <td><%= item.price %></td>
         <td><%= item.stock %></td>
+        <td>
+          <% if !item.category.nil? %>
+          <%= item.category.name %>
+          <% else %>
+          <%= "No Category" %>
+          <%end%></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
+
 </table>
+</div>
 
 <br>
 
