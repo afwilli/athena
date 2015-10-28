@@ -4,8 +4,14 @@ gem 'devise' #user registration gem
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
+#heroku needs:
+group :production do
+gem 'rails_12factor', group: :producton #required by heroku
+gem 'pg', group: :production
+gem 'sqlite3', group: :development
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
