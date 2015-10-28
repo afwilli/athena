@@ -1,0 +1,30 @@
+<h1> WELCOME! </h1>
+<BR>
+
+<%if !user_signed_in? %>
+<%= link_to('Register', new_user_session_path)  %>
+<% end %>
+<p id="notice"><%= notice %></p>
+<BR>
+
+<h1>Check out our avalible items:</h1>
+
+<table>
+  <thead>
+    <tr>
+     <th><th/>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= link_to item.name + " (" + number_to_currency(item.price) + ")", item %></td>
+       
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+<BR>
+   
