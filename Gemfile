@@ -6,11 +6,9 @@ gem 'devise' #user registration gem
 gem 'rails', '4.2.4'
 
 #heroku needs:
-group :production do
 gem 'rails_12factor', group: :producton #required by heroku
 gem 'pg', group: :production
 gem 'sqlite3', group: :development
-end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
